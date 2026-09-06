@@ -1,1 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hello World! :3</title>
+
+    <style>
+        /* =========================
+           BASIC STUFF
+           ========================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            background: #000;
+        }
+
+        body {
+            margin: 0;
+            background: #000;
+            color: #eee;
+
+            font-family: "Courier New", monospace;
+
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #00dddd;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #ff00ff;
+            text-decoration: underline;
+        }
+
+
+        /* =========================
+           PAGE
+           ========================= */
+
+        .page {
+            width: min(90%, 720px);
+            margin: 55px auto 0;
+        }
+
+
+        /* =========================
+           HEADER
+           ========================= */
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #highlight {
+            display: inline-block;
+
+            margin: 0;
+
+            font-size: 38px;
+            font-weight: normal;
+            line-height: 1.2;
+
+            letter-spacing: 1px;
+        }
+
+        .tagline {
+            margin: 12px 0 20px;
+
+            color: #777;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           NAVIGATION
+           ========================= */
+
+        nav {
+            text-align: center;
+
+            color: #444;
+
+            font-size: 13px;
+        }
+
+        nav a {
+            margin: 0 7px;
+
+            color: #777;
+        }
+
+        nav a:hover {
+            color: #ff00ff;
+        }
+
+        .divider {
+            width: 100%;
+            height: 1px;
+
+            margin-top: 25px;
+
+            background: #151515;
+        }
+
+
+        /* =========================
+           SECTIONS
+           ========================= */
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+
+        /* =========================
+           POSTS
+           ========================= */
+
+        .post {
+            position: relative;
+
+            margin-bottom: 32px;
+            padding: 14px 18px 16px 20px;
+
+            background: #050505;
+
+            border-left: 2px solid #222;
+
+            transition:
+                border-color 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .post:hover {
+            background: #080808;
+
+            border-left-color: #b000ff;
+        }
+
+        .post::before {
+            content: ">";
+
+            position: absolute;
+
+            left: 6px;
+            top: 13px;
+
+            color: #444;
+
+            font-size: 12px;
+
+            transition: color 0.2s ease;
+        }
+
+        .post:hover::before {
+            color: #b000ff;
+        }
+
+        .date {
+            margin-bottom: 8px;
+
+            color: #555;
+
+            font-size: 12px;
+            line-height: 1.2;
+        }
+
+        .content {
+            margin: 0;
+
+            color: #eee;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           ABOUT
+           ========================= */
+
+        .box {
+            padding: 18px;
+
+            background: #050505;
+
+            border-left: 2px solid #222;
+        }
+
+        .box h2 {
+            margin-top: 0;
+
+            color: #aaa;
+
+            font-size: 18px;
+            font-weight: normal;
+        }
+
+        .box p {
+            color: #ccc;
+        }
+
+
+        /* =========================
+           PROJECTS
+           ========================= */
+
+        .project {
+            margin-bottom: 18px;
+            padding: 15px;
+
+            background: #050505;
+
+            border: 1px solid #151515;
+        }
+
+        .project-title {
+            color: #00dddd;
+        }
+
+        .project-description {
+            margin: 5px 0 0;
+
+            color: #888;
+        }
+
+
+        /* =========================
+           NOW PLAYING
+           ========================= */
+
+        .now-playing {
+            margin-top: 25px;
+
+            color: #555;
+
+            font-size: 12px;
+
+            text-align: center;
+        }
+
+        .now-playing span {
+            color: #888;
+        }
+
+
+        /* =========================
+           WEBRING
+           ========================= */
+
+        .webring {
+            margin-top: 30px;
+
+            color: #555;
+
+            font-size: 12px;
+
+            text-align: center;
+        }
+
+        .webring a {
+            margin: 0 5px;
+        }
+
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        footer {
+            margin-top: 65px;
+
+            padding: 20px 0 35px;
+
+            border-top: 1px solid #151515;
+
+            color: #444;
+
+            font-size: 11px;
+
+            text-align: center;
+        }
+
+        .heart {
+            color: #700070;
+        }
+
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 600px) {
+
+            .page {
+                width: 88%;
+                margin-top: 35px;
+            }
+
+            #highlight {
+                font-size: 30px;
+            }
+
+            .content {
+                font-size: 14px;
+            }
+
+            nav a {
+                display: inline-block;
+
+                margin: 3px 5px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+    <!-- =========================
+         HEADER
+         ========================= -->
+
+    <header>
+
+        <h1 id="highlight">
+            Hello World!
+        </h1>
+
+        <p class="tagline">
+            a tiny corner of the internet as my perspective :3
+        </p>
+
+        <nav>
+
+            <a href="#" onclick="showPage('home'); return false;">
+                [ home ]
+            </a>
+
+            <a href="#" onclick="showPage('about'); return false;">
+                [ about ]
+            </a>
+
+            <a href="#" onclick="showPage('projects'); return false;">
+                [ projects ]
+            </a>
+
+        </nav>
+
+        <div class="divider"></div>
+
+    </header>
+
+
+
+    <!-- =========================
+         HOME
+         ========================= -->
+
+    <main id="home" class="section active">
+
+
+        <!-- POST -->
+
+        <article class="post">
+
+            <div class="date">
+                2026-09-06 · 17:30 UTC
+            </div>
+
+            <p class="content">
+                My day was ass today :) i stubbed my toe like 2 times
+                and tried to make this website look better as a beginner
+                but still looks ass
+            </p>
+
+        </article>
+
+
+        <!-- POST -->
+
+        <article class="post">
+
+            <div class="date">
+                2026-09-06 · 17:31 UTC
+            </div>
+
+            <p class="content">
+                :3
+            </p>
+
+        </article>
+
+
+        <!-- POST -->
+
+        <article class="post">
+
+            <div class="date">
+                2026-09-06 · 17:33 UTC
+            </div>
+
+            <p class="content">
+                I made this repo with my old laptop i found in my
+                storage room, yes its slow BUT i can code :)
+            </p>
+
+        </article>
+
+
+        <!-- POST -->
+
+        <article class="post">
+
+            <div class="date">
+                2026-09-06 · 17:52 UTC
+            </div>
+
+            <p class="content">
+                i put the RAINBOWWW which looks good as FUCK :Dd
+            </p>
+
+        </article>
+
+
+        <!-- POST -->
+
+        <article class="post">
+
+            <div class="date">
+                2026-09-06 · 17:58 UTC
+            </div>
+
+            <p class="content">
+                this laptop is basic but atleast half life works
+                (56 fps on max, ?? fps on low, im on 60hz so no difference)
+            </p>
+
+        </article>
+
+
+        <!-- POST -->
+
+        <article class="post">
+
+            <div class="date">
+                2026-09-06 · 18:05 UTC
+            </div>
+
+            <p class="content">
+                there are placeholders i will have to fix.
+                other than that i guess i can put to github?
+            </p>
+
+        </article>
+
+
+        <!-- =========================
+             ADD NEW POSTS ABOVE HERE
+             ========================= -->
+
+
+        <div class="now-playing">
+
+            now playing:
+
+            <span>
+                whatever i'm listening to :3
+            </span>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================
+         ABOUT
+         ========================= -->
+
+    <section id="about" class="section">
+
+        <div class="box">
+
+            <h2>
+                about me
+            </h2>
+
+            <p>
+                hi :3
+            </p>
+
+            <p>
+                this is just my little corner of the internet where
+                i dump random thoughts, projects, things i find
+                interesting and whatever else i feel like posting.
+            </p>
+
+            <p>
+                i am learning how to make websites and
+                probably breaking this one in the process.
+                do NOT judge me.
+            </p>
+
+            <p>
+                current setup:
+                <br>
+                old laptop + code
+                <br>
+                some hp laptop from 2021
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PROJECTS
+         ========================= -->
+
+    <section id="projects" class="section">
+
+
+        <div class="project">
+
+            <div class="project-title">
+                &gt; this website
+            </div>
+
+            <p class="project-description">
+                the website you're currently looking at.
+                made with HTML, CSS and JavaScript.
+            </p>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-title">
+                &gt; my first repo
+            </div>
+
+            <p class="project-description">
+                made on my old laptop that is on life support ;-;.
+            </p>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-title">
+                &gt; more stuff soon...
+            </div>
+
+            <p class="project-description">
+                probably.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         WEBRING
+         ========================= -->
+
+    <div class="webring">
+
+        &lt;&lt;
+
+        <a href="#">
+            prev
+        </a>
+
+        |
+
+        <a href="#">
+            random
+        </a>
+
+        |
+
+        <a href="#">
+            next
+        </a>
+
+        &gt;&gt;
+
+    </div>
+
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <footer>
+
+        <div>
+            made with HTML
+            <span class="heart">&lt;3</span>
+        </div>
+
+        <div>
+            last updated: 2026-09-06
+        </div>
+
+    </footer>
+
+
+</div>
+
+
+
+<script>
+
+    /* =========================
+       PAGE SWITCHING
+       ========================= */
+
+    function showPage(pageName) {
+
+        const pages =
+            document.querySelectorAll(".section");
+
+        pages.forEach(function(page) {
+
+            page.classList.remove("active");
+
+        });
+
+
+        const selectedPage =
+            document.getElementById(pageName);
+
+
+        if (selectedPage) {
+
+            selectedPage.classList.add("active");
+
+        }
+
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+
+
+    /* =========================
+       RAINBOW TITLE
+       ========================= */
+
+    const title =
+        document.getElementById("highlight");
+
+
+    const colors = [
+
+        "00",
+        "14",
+        "28",
+        "3C",
+        "50",
+        "64",
+        "78",
+        "8C",
+        "A0",
+        "B4",
+        "C8",
+        "DC",
+        "F0"
+
+    ];
+
+
+    let r = 1;
+    let g = 1;
+    let b = 1;
+
+    let sequence = 1;
+
+
+    function changeColor() {
+
+        title.style.color =
+            "#" +
+            colors[r] +
+            colors[g] +
+            colors[b];
+
+
+        if (sequence === 1) {
+
+            g++;
+
+            if (g === 12) {
+                sequence = 2;
+            }
+
+        }
+
+
+        else if (sequence === 2) {
+
+            r--;
+
+            if (r === 0) {
+                sequence = 3;
+            }
+
+        }
+
+
+        else if (sequence === 3) {
+
+            b++;
+
+            if (b === 12) {
+                sequence = 4;
+            }
+
+        }
+
+
+        else if (sequence === 4) {
+
+            g--;
+
+            if (g === 0) {
+                sequence = 5;
+            }
+
+        }
+
+
+        else if (sequence === 5) {
+
+            r++;
+
+            if (r === 12) {
+                sequence = 6;
+            }
+
+        }
+
+
+        else if (sequence === 6) {
+
+            b--;
+
+            if (b === 0) {
+                sequence = 1;
+            }
+
+        }
+
+    }
+
+
+    setInterval(changeColor, 250);
+
+</script>
+
+</body>
+
+</html>
 
