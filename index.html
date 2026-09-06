@@ -8,10 +8,6 @@
     <title>Hello World! :3</title>
 
     <style>
-        /* =========================
-           BASIC STUFF
-           ========================= */
-
         * {
             box-sizing: border-box;
         }
@@ -41,20 +37,12 @@
             text-decoration: underline;
         }
 
-
-        /* =========================
-           PAGE
-           ========================= */
-
         .page {
             width: min(90%, 720px);
             margin: 55px auto 0;
         }
 
 
-        /* =========================
-           HEADER
-           ========================= */
 
         header {
             text-align: center;
@@ -80,11 +68,6 @@
 
             font-size: 13px;
         }
-
-
-        /* =========================
-           NAVIGATION
-           ========================= */
 
         nav {
             text-align: center;
@@ -113,11 +96,6 @@
             background: #151515;
         }
 
-
-        /* =========================
-           SECTIONS
-           ========================= */
-
         .section {
             display: none;
         }
@@ -126,10 +104,6 @@
             display: block;
         }
 
-
-        /* =========================
-           POSTS
-           ========================= */
 
         .post {
             position: relative;
@@ -188,11 +162,6 @@
             line-height: 1.7;
         }
 
-
-        /* =========================
-           ABOUT
-           ========================= */
-
         .box {
             padding: 18px;
 
@@ -214,11 +183,6 @@
             color: #ccc;
         }
 
-
-        /* =========================
-           PROJECTS
-           ========================= */
-
         .project {
             margin-bottom: 18px;
             padding: 15px;
@@ -238,11 +202,6 @@
             color: #888;
         }
 
-
-        /* =========================
-           NOW PLAYING
-           ========================= */
-
         .now-playing {
             margin-top: 25px;
 
@@ -257,11 +216,6 @@
             color: #888;
         }
 
-
-        /* =========================
-           WEBRING
-           ========================= */
-
         .webring {
             margin-top: 30px;
 
@@ -275,11 +229,6 @@
         .webring a {
             margin: 0 5px;
         }
-
-
-        /* =========================
-           FOOTER
-           ========================= */
 
         footer {
             margin-top: 65px;
@@ -299,10 +248,6 @@
             color: #700070;
         }
 
-
-        /* =========================
-           MOBILE
-           ========================= */
 
         @media (max-width: 600px) {
 
@@ -332,11 +277,6 @@
 <body>
 
 <div class="page">
-
-
-    <!-- =========================
-         HEADER
-         ========================= -->
 
     <header>
 
@@ -368,12 +308,6 @@
 
     </header>
 
-
-
-    <!-- =========================
-         HOME
-         ========================= -->
-
     <main id="home" class="section active">
 
 
@@ -386,7 +320,7 @@
             </div>
 
             <p class="content">
-                My day was ass today :) i stubbed my toe like 2 times
+                My day was ass today :) i stubbed my toe like 2 times + accidentally cut myself :(
                 and tried to make this website look better as a beginner
                 but still looks ass
             </p>
@@ -471,10 +405,19 @@
 
         </article>
 
+                <!-- POST -->
 
-        <!-- =========================
-             ADD NEW POSTS ABOVE HERE
-             ========================= -->
+        <article class="post">
+
+            <div class="date">
+                2026-09-06 · 18:12 UTC
+            </div>
+
+            <p class="content">
+                idk why i made this but eh its fine lol just gotta share to my friend this website then its fineeeeeeeeee UwU
+            </p>
+
+        </article>
 
 
         <div class="now-playing">
@@ -489,18 +432,12 @@
 
     </main>
 
-
-
-    <!-- =========================
-         ABOUT
-         ========================= -->
-
     <section id="about" class="section">
 
         <div class="box">
 
             <h2>
-                about me
+                About Me!!
             </h2>
 
             <p>
@@ -531,12 +468,6 @@
 
     </section>
 
-
-
-    <!-- =========================
-         PROJECTS
-         ========================= -->
-
     <section id="projects" class="section">
 
 
@@ -548,7 +479,7 @@
 
             <p class="project-description">
                 the website you're currently looking at.
-                made with HTML, CSS and JavaScript.
+                made with html css and js.
             </p>
 
         </div>
@@ -581,12 +512,6 @@
 
     </section>
 
-
-
-    <!-- =========================
-         WEBRING
-         ========================= -->
-
     <div class="webring">
 
         &lt;&lt;
@@ -611,12 +536,6 @@
 
     </div>
 
-
-
-    <!-- =========================
-         FOOTER
-         ========================= -->
-
     <footer>
 
         <div>
@@ -636,10 +555,6 @@
 
 
 <script>
-
-    /* =========================
-       PAGE SWITCHING
-       ========================= */
 
     function showPage(pageName) {
 
@@ -670,12 +585,6 @@
         });
 
     }
-
-
-
-    /* =========================
-       RAINBOW TITLE
-       ========================= */
 
     const title =
         document.getElementById("highlight");
